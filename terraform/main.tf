@@ -20,3 +20,11 @@ terraform {
 provider "aws" {
   region = "eu-central-1"
 }
+
+module "sqs_order_management" {
+  source = "./modules/sqs_order_management"
+}
+
+module "sns_topics" {
+  source = "./modules/sns_topics"
+}
