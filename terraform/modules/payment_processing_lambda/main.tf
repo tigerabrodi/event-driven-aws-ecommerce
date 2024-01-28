@@ -41,10 +41,40 @@ resource "aws_iam_role_policy" "lambda_sqs_sns_policy" {
         Action = [
           "sqs:ReceiveMessage",
           "sqs:DeleteMessage",
+          "sqs:GetQueueAttributes",
           "sns:Publish"
         ],
+        Effect = "Allow",
+        Resource = [
+          var.sqs_queue_arn,
+          var.sns_topic_arn
+        ]
+      },
+    ],
+  })
+}
+
+resource "aws_lambda_event_source_mapping" "sqs_mapping" {
+  event_source_arn = var.sqs_queue_arn
+  function_name    = aws_lambda_function.payment_processing.arn
+  batch_size       = 10
+}
+
+resource "aws_iam_role_policy" "lambda_cloudwatch_policy" {
+  name = "lambda_cloudwatch_policy"
+  role = aws_iam_role.lambda_iam_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Action = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ],
         Effect   = "Allow",
-        Resource = "*"
+        Resource = "arn:aws:logs:*:*:*"
       },
     ],
   })
@@ -54,3 +84,4 @@ resource "aws_cloudwatch_log_group" "payment_processing_lambda_log_group" {
   name              = "/aws/lambda/${aws_lambda_function.payment_processing.function_name}"
   retention_in_days = 7
 }
+
