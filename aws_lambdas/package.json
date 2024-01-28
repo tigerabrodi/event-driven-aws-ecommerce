@@ -1,0 +1,15 @@
+{
+  "name": "aws_lambdas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "zip-order-management-lambda": "zip -r orderManagement.zip orderManagementHandler.js node_modules/ && mv orderManagement.zip ../terraform/modules/order_management_lambda/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1545.0"
+  }
+}
