@@ -28,3 +28,9 @@ module "sqs_order_management" {
 module "sns_topics" {
   source = "./modules/sns_topics"
 }
+
+module "order_management_lambda" {
+  source        = "./modules/order_management_lambda"
+  sqs_queue_arn = module.sqs_order_management.sqs_order_management_queue_arn
+  sqs_queue_url = module.sqs_order_management.sqs_order_management_queue_url
+}
