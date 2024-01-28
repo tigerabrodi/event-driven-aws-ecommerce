@@ -1,8 +1,6 @@
 const AWS = require("aws-sdk");
-const sqs = new AWS.SQS({ apiVersion: "2012-11-05" });
 const sns = new AWS.SNS({ apiVersion: "2010-03-31" });
 
-const SQS_QUEUE_URL = process.env.SQS_QUEUE_URL;
 const SNS_TOPIC_ARN = process.env.SNS_TOPIC_ARN;
 
 exports.handler = async (event) => {

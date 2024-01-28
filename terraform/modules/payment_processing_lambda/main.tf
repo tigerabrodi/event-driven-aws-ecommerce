@@ -8,7 +8,6 @@ resource "aws_lambda_function" "payment_processing" {
   source_code_hash = filebase64sha256("${path.module}/paymentProcessing.zip")
   environment {
     variables = {
-      SQS_QUEUE_URL = var.sqs_queue_url
       SNS_TOPIC_ARN = var.sns_topic_arn
     }
   }
