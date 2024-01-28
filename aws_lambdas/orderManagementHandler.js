@@ -1,6 +1,6 @@
 const AWS = require("aws-sdk");
 const sqs = new AWS.SQS({ apiVersion: "2012-11-05" });
-const QUEUE_URL = process.env.QUEUE_URL;
+const SQS_QUEUE_URL = process.env.SQS_QUEUE_URL;
 
 exports.handler = async (event) => {
   try {
@@ -14,7 +14,7 @@ exports.handler = async (event) => {
 
     const params = {
       MessageBody: JSON.stringify(event),
-      QueueUrl: QUEUE_URL,
+      QueueUrl: SQS_QUEUE_URL,
     };
 
     // Send the message to SQS
