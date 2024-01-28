@@ -69,7 +69,7 @@ resource "aws_iam_role_policy" "lambda_cloudwatch_policy" {
 
 # CloudWatch Log Group to see logs from Lambda
 resource "aws_cloudwatch_log_group" "order_management_lambda_log_group" {
-  name              = "/aws/lambda/orderManagementLogGroup"
-  retention_in_days = 30
+  name              = "/aws/lambda/orderManagement"
+  retention_in_days = 7
 }
 
