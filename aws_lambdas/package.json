@@ -6,7 +6,8 @@
   "scripts": {
     "zip-order-management-lambda": "zip -r orderManagement.zip orderManagementHandler.js node_modules/ && mv orderManagement.zip ../terraform/modules/order_management_lambda/",
     "zip-payment-processing-lambda": "zip -r paymentProcessing.zip paymentProcessingHandler.js node_modules/ && mv paymentProcessing.zip ../terraform/modules/payment_processing_lambda/",
-    "zip-inventory-management-lambda": "zip -r inventoryManagement.zip inventoryManagementHandler.js node_modules/ && mv inventoryManagement.zip ../terraform/modules/inventory_management_lambda/"
+    "zip-inventory-management-lambda": "zip -r inventoryManagement.zip inventoryManagementHandler.js node_modules/ && mv inventoryManagement.zip ../terraform/modules/inventory_management_lambda/",
+    "zip-notification-service-lambda": "zip -r notificationService.zip notificationServiceHandler.js node_modules/ && mv notificationService.zip ../terraform/modules/notification_service_lambda/"
   },
   "keywords": [],
   "author": "",

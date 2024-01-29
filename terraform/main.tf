@@ -46,3 +46,11 @@ module "inventory_management_lambda" {
   sns_inventory_topic_arn = module.sns_topics.sns_inventory_topic_arn
   sns_payment_topic_arn   = module.sns_topics.sns_payment_processing_topic_arn
 }
+
+module "notification_service_lambda" {
+  source                  = "./modules/notification_service_lambda"
+  sender_email            = var.sender_email
+  sns_inventory_topic_arn = module.sns_topics.sns_inventory_topic_arn
+  user_name               = var.user_name
+  account_id              = var.account_id
+}
