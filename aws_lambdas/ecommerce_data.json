@@ -2,6 +2,7 @@
   {
     "transactionId": "b4a356f9-603d-4c66-88f5-b9349dc3c7da",
     "customerId": 952,
+    "customerEmail": "customer952@example.com",
     "productId": 14,
     "quantity": 5,
     "price": 453.0,
@@ -12,6 +13,7 @@
   {
     "transactionId": "27d9fa33-a0a4-4472-af2a-2a326f9e58d8",
     "customerId": 83171,
+    "customerEmail": "customer83171@example.com",
     "productId": 592,
     "quantity": 5,
     "price": 354.93,
@@ -22,6 +24,7 @@
   {
     "transactionId": "19ee2f32-cc47-432d-8a30-6c9ba8a5fbce",
     "customerId": 26413,
+    "customerEmail": "customer26413@example.com",
     "productId": 1,
     "quantity": 1,
     "price": 18.18,
@@ -32,6 +35,7 @@
   {
     "transactionId": "f109d321-90e8-41a1-ba19-65da466c1d77",
     "customerId": 60045,
+    "customerEmail": "customer60045@example.com",
     "productId": 691,
     "quantity": 5,
     "price": 132.85,
@@ -42,6 +46,7 @@
   {
     "transactionId": "906bdd23-fb9b-4e87-85d0-61767fcd1968",
     "customerId": 37340,
+    "customerEmail": "customer37340@example.com",
     "productId": 757,
     "quantity": 5,
     "price": 204.14,
