@@ -1,9 +1,9 @@
 terraform {
 
   cloud {
-    organization = "tiger_projects"
+    organization = "{your-organization-name}"
     workspaces {
-      name = "event-driven-aws-ecommerce"
+      name = "{your-workspace-name}"
     }
   }
 
