@@ -40,3 +40,9 @@ module "payment_processing_lambda" {
   sns_topic_arn = module.sns_topics.sns_payment_processing_topic_arn
   sqs_queue_arn = module.sqs_order_management.sqs_order_management_queue_arn
 }
+
+module "inventory_management_lambda" {
+  source                  = "./modules/inventory_management_lambda"
+  sns_inventory_topic_arn = module.sns_topics.sns_inventory_topic_arn
+  sns_payment_topic_arn   = module.sns_topics.sns_payment_processing_topic_arn
+}
