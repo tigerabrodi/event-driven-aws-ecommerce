@@ -12,20 +12,15 @@ exports.handler = async (event) => {
       return;
     }
 
-    console.log(`Processing ${event.Records.length} records`); // Added log to know the number of records being processed
-
     for (const record of event.Records) {
-      console.log(`Processing record: ${JSON.stringify(record, null, 2)}`); // Added log to understand the shape of each record
-
       try {
         const order = JSON.parse(record.Sns.Message);
-        console.log(`Order received: ${JSON.stringify(order, null, 2)}`); // Added log to understand the shape of the order
 
         // Simulate inventory update
         console.log(`Updating inventory for order: ${order.transactionId}`);
 
         const params = {
-          Message: `Inventory for order ${order.transactionId} has been updated successfully`,
+          Message: JSON.stringify(order),
           TopicArn: SNS_INVENTORY_TOPIC_ARN,
         };
 
