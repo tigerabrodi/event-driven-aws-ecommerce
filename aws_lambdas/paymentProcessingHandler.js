@@ -19,7 +19,7 @@ exports.handler = async (event) => {
 
       // On successful payment, push a message to payment_status_topic
       const params = {
-        Message: `Payment for order ${order.transactionId} has been processed successfully`,
+        Message: JSON.stringify(order),
         TopicArn: SNS_TOPIC_ARN,
       };
 
